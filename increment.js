@@ -52,6 +52,11 @@ ReactDOM.render(
 //     display.textContent = count;
 // })
 
+// batch update
+//
+    // virtual DOM
+    // 
+
 
 
 
