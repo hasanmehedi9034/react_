@@ -29,7 +29,16 @@ const Increment = () => {
 
 
 // ReactDOM.render(Increment(), domContainer);
-ReactDOM.render( <Increment />, domContainer);
+// ReactDOM.render( <Increment />, domContainer);
+ReactDOM.render(
+    <div class="container">
+        <Increment />
+        <Increment />
+        <Increment />
+        <Increment />
+    </div>,
+    domContainer
+);
 
 
 
