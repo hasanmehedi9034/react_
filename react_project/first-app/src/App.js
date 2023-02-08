@@ -1,36 +1,14 @@
 import './App.css';
 import React from 'react';
+import Clock from './components/Clock';
 
-// function App() {
-// return (
-//   <div className="App">
-//     <header className="App-header">
-//       <img src={logo} className="App-logo" alt="logo" />
-//       <p>
-//         Edit <code>src/App.js</code> and save to reload.
-//       </p>
-//       <a
-//         className="App-link"
-//         href="https://reactjs.org"
-//         target="_blank"
-//         rel="noopener noreferrer"
-//       >
-//         Learn React
-//       </a>
-//     </header>
-//   </div>
-// );
-// }
-
-class Clock extends React.Component {
-    render() {
-        return (
-            <h1 className="heading">
-                <span className="text">Hello {new Date().toLocaleTimeString(this.props.local)}</span>
-            </h1>
-        )
-    }
+function App() {
+    return (
+        <Clock local='bn-BD' />
+    );
 }
 
 
-export default Clock;
+
+
+export default App;
