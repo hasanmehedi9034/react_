@@ -8,15 +8,14 @@ class Clock extends React.Component {
     //     };
     // }
 
-    state = { date: new Date };
+    state = {
+        date: new Date,
+        locale: 'bn-BD'
+    };
 
-    tick() {
-        // this.setState({
-        //     date: new Date()
-        // })
-        
+    tick() {        
         this.setState((state, props) => ({
-            date: new Date()
+            date: new Date(),
         }))
     }
 
@@ -28,11 +27,28 @@ class Clock extends React.Component {
         clearInterval(this.clockTimer);
     }
 
+    // handleClick = () => {
+    //     this.setState({
+    //         locale: 'en-US'
+    //     });
+    // }
+
+    handleClick() {
+        this.setState({
+            locale: 'en-US'
+        })
+    }
+
     render() {
+        const {date, locale} = this.state;
+
         return (
-            <h1 className="heading">
-                <span className="text">{this.state.date.toLocaleTimeString(this.props.local)}</span>
-            </h1>
+            <>
+                <h1 className="heading">
+                    <span className="text">{this.state.date.toLocaleTimeString(locale)}</span>
+                </h1>
+                <button type="button" onClick={this.handleClick.bind(this)}>Click Here</button>
+            </>
         )
     }
 }
