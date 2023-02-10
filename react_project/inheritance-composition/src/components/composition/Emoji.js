@@ -2,7 +2,7 @@ import React from 'react'
 
 export default class Emoji extends React.Component {
     addEmoji = (text, emoji) => {
-        return `${emoji} ${text} ${emoji}` ;
+        return `${emoji} ${text} ${emoji}`;
     }
 
     render() {

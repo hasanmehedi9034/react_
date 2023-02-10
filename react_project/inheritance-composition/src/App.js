@@ -4,6 +4,25 @@ import Emoji from './components/composition/Emoji';
 import Text from './components/composition/Text';
 
 function App() {
+    // return (
+    //     <Emoji>
+    //         {
+    //             ({ addEmoji }) => (
+    //                 <Bracket>
+    //                     {
+    //                         ({ addBracket }) => (
+    //                             <Text 
+    //                                 addBracket={addBracket}
+    //                                 addEmoji={addEmoji} 
+    //                             />
+    //                         )
+    //                     }
+    //                 </Bracket>
+    //             )
+    //         }
+    //     </Emoji>        
+    // );
+
     return (
         <Emoji>
             {
@@ -11,17 +30,17 @@ function App() {
                     <Bracket>
                         {
                             ({ addBracket }) => (
-                                <Text 
+                                <Text
+                                    addEmoji={addEmoji}
                                     addBracket={addBracket}
-                                    addEmoji={addEmoji} 
                                 />
                             )
                         }
                     </Bracket>
                 )
             }
-        </Emoji>        
-    );
+        </Emoji>
+    )
 }
 
 export default App;

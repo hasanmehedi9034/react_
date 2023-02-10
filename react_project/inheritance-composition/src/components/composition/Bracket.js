@@ -2,7 +2,7 @@ import React from 'react'
 
 export default class Bracket extends React.Component {
     addBracket = (text) => {
-        return `[ ${text} ]` ;
+        return `[ ${text} ]`;
     }
 
     render() {
