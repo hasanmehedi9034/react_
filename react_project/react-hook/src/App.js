@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import MyComponentClass from './components/MyComponentClass';
 import MyComponent from './components/MyComponent';
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import ShowCount from './components/ShowCount';
 import Button from './components/Button';
 import Title from './components/Title';
@@ -19,11 +19,18 @@ function App() {
         setCount2((count2) => count2 + 5);
     }, []);
 
+    const isEvenOrOdd = useMemo(() => {
+        let a = 0;
+        while(a < 1000000000) a++;
+        return count1 % 2 === 0;
+    }, [count1])
+
     return (
         <>  
             <Title/>
 
             <ShowCount count={count1} title='Counter 1'/>
+            <span>{isEvenOrOdd ? 'even': 'odd'}</span>
 
             <Button handleClick={incrementByOne}>
                 Increment by one
